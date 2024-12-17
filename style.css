@@ -1,0 +1,245 @@
+/* Utilisation de la police Plus Jakarta Sans avec différentes valeurs de poids */
+.plus-jakarta-sans-200 {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+}
+
+.plus-jakarta-sans-400 {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.plus-jakarta-sans-600 {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.plus-jakarta-sans-800 {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+
+body {
+    background-color: aquamarine;   
+}
+
+.block_superieur {
+    display: flex;
+   flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+h3 {
+   
+    margin-top: 10px;
+}
+
+.clear {
+    margin-top: 17px;
+    font-size: 12px;
+    color: grey; 
+   text-decoration: underline;
+}
+
+label {
+  
+    font-size: 12px;
+    display: block;
+    margin: 10px 0px 10px 10px;
+    color: grey;
+}
+.block-calcul {
+    width: 30%;
+    margin-left: 270px;
+    background-color: white;
+    border-radius: 20px 0px 0px 20px;
+   height: 500px;
+    padding: 20px;
+    margin-top: 50px;
+    
+    
+}
+
+.durée_et_intérêt {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+
+
+.champs {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid grey;
+    border-radius: 5px;
+    margin: 10px, auto, 10px, auto;
+}
+
+fieldset { 
+    border : none;
+    margin-top: 10px 0px;
+}
+
+legend {
+font-size: 12px;
+color: grey;
+margin-left: 10px;
+
+}
+ 
+.Repayment, .Interest {
+    display: flex;
+    border: solid 1px grey;
+    border-radius: 5px;
+    margin-top: 10px;
+   margin-left: 10px;
+   
+    
+   
+}
+
+.radio {
+    width: 20px;
+    margin : 0px 10px;
+   
+}
+
+.label_radio {
+    font-size: 15px;
+    font-weight: bold;
+    color: black;
+    
+    
+}
+
+input {
+    margin: 10px;
+    border: none;
+   
+  
+
+}
+
+
+.autre_champs {
+    width: 80%;
+    padding: 0.5rem;
+    border: 1px solid grey;
+    border-radius: 5px;
+    margin: 10px, auto, 10px, auto;
+}
+
+button {
+    width: 100%;
+        padding: 0.5rem;
+        border: 1px solid grey;
+        border-radius: 20px;
+        margin: 10px, auto, 10px, auto;
+        background-color: greenyellow;
+    }
+
+
+    .block_resultat {
+        width: 30%;
+        margin: 0 auto;
+        background-color: rgb(36, 30, 94);
+        border-radius:  30px;
+        height: 500px;
+        padding: 20px;
+        margin-top: 50px;
+        position: absolute;
+        top : 0px;
+        left: 730px;
+        display: flex;
+        flex-direction: column;
+    
+    }
+
+    .block_blanc { 
+    background-color: white;
+    height: 500px;
+    width : 150px;
+    position: absolute;
+    top: 50px;
+    left: 725px;
+}
+
+.hidden {
+    display: none;
+}
+
+
+.resultatVide {
+    display: flex;
+    flex-direction: column;
+   
+    
+}
+
+.image_calculatrice {
+    margin-top: 50px;
+    width : 150px;
+    margin: 100px auto 0px auto;
+}
+.titre_affichage_resultat {
+    
+    color: white;
+    text-align: center;
+    margin-bottom: 10px ;
+   
+}
+
+.titre {
+    color: black
+}
+
+.phrase_explicative {
+    font-size: 15px;
+    text-align:center;
+    color: rgb(68, 68, 196);
+}
+
+.resultat {
+    background-color: #f0f8ff;
+    border: 2px solid #24205e;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    color: #24205e;
+    font-size: 16px;
+  
+}
+
+.resultat p {
+    margin: 10px 0;
+   
+}
+
+#footer {
+    font-size: 12px;
+    text-align: center;
+
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}

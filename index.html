@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- displays site properly based on user's device -->
+
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./assets/images/favicon-32x32.png"
+		/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+			rel="stylesheet"
+		/>
+    <link rel="stylesheet" href="style.css" />
+		<script src="script.js" defer></script>
+		<title>Frontend Mentor | Mortgage repayment calculator</title>
+
+		<!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+		<style>
+			.attribution {
+				font-size: 11px;
+				text-align: center;
+			}
+			.attribution a {
+				color: hsl(228, 45%, 44%);
+			}
+		</style>
+
+	
+	</head>
+	<body>
+		<div class="block-calcul">
+			<div class="block_superieur">
+      <h3 class="titre">Simulateur de prêt</h3	>
+			
+      </div>
+
+			<form id="formulaire_prêt">
+        <div class="montant">
+				<label for="montant">Montant du prêt</label>
+				<input type="text" name="montant" id="montant" class="champs"/>
+        </div>
+				<div class="durée_et_intérêt">
+          <div class="block_duree">
+					<label for="durée">Durée (en année)</label>
+					<input type="text" name="durée" id="durée" class="autre_champs"/>
+          </div>
+          <div class="block_intérêt">
+					<label for="taux_intérêt">Taux d'intérêt</label>
+					<input type="text" name="taux_intérêt" id="taux_intérêt" class="autre_champs"/>
+				</div>
+        </div>
+
+        <fieldset>
+				 <legend>Que souhaitez-vous connaître</legend>
+         <div class="Repayment">
+           <input type="radio" name="type" id="Repayment" value="Repayment"class="radio champs"/>
+          <label for="Repayment" class="label_radio">Mensualités</label>
+        </div>
+        <div class="Interest">
+          <input type="radio" name="type" id="Interest_only" value="Interest_only" class="radio champs"/> 
+          <label for="Interest_only" class="label_radio">Seulement les intérêts</label>
+        </fieldset>
+				<br /><br />
+        
+				<button type="submit" name="soumettre">
+    <i class="bi bi-calculator"></i> Calcul du remboursement
+	
+</button>
+   
+			</form>
+		</div>
+
+    <div class="block_blanc">
+
+    </div>
+
+    <div class="block_resultat">
+    
+    <div class="resultatVide " id="resultatVide">
+      <!-- Empty results start --> 
+      <img src="./assets/images/illustration-empty.svg" alt="" class="image_calculatrice">
+      <h3 class="titre_affichage_resultat">Les résultats s'affichent ici </h3>
+    <p class="phrase_explicative">Remplissez le formulaire et cliquez sur « calculer les remboursements » pour voir
+      quels seraient vos remboursements mensuels..</p> 
+      <!-- Empty results end -->
+    </div>
+    
+    
+    <div class="resultat hidden" id="resultat">
+		<!-- Completed results start -->
+		<p class="phrase_explicative" >Vos résultats Vos résultats sont affichés ci-dessous en fonction des informations que vous avez fournies. Pour ajuster les résultats, modifiez le formulaire et cliquez à nouveau sur « calculer les remboursements ». Vos mensualités Total que vous rembourserez sur la durée</p>
+		<div id="resultat_obtenu"></div>
+		<!-- Completed results end -->
+    </div>
+
+    </div>
+</body>
+		<footer id="footer">
+			
+			
+		</footer>
+	</body>
+</html>
