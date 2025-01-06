@@ -159,7 +159,7 @@ button {
   width: 150px;
   position: absolute;
   top: 50px;
-  left: 590px;
+  left: 585px;
 }
 
 .hidden {
@@ -214,4 +214,55 @@ button {
 a {
   color: black;
   text-decoration: none;
+}
+
+@media (max-width: 1050px) {
+  .block_blanc {
+    display: none;
+  }
+
+  .block-calcul {
+    border-radius: 20px;
+    height: 550px;
+    margin-bottom: 50px;
+  }
+
+  .block_resultat {
+    height: 550px;
+    margin-bottom: 50px;
+    position: relative;
+    top: auto;
+    left: auto;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .block_blanc {
+    display: none;
+  }
+
+  .block-calcul {
+    border-radius: 20px;
+    height: auto;
+    width: 80%;
+    margin: 10px 0px;
+  }
+
+  .block_resultat {
+    height: auto;
+    width: 80%;
+    margin: 10px 0px;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
 }
