@@ -1,105 +1,94 @@
-// script.js
 document
-	.getElementById("formulaire_prêt")
-	.addEventListener("submit", function (event) {
-		event.preventDefault();
+  .getElementById("formulaire_prêt")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
 
-		// Récupérer les valeurs du formulaire
-		let montant = parseFloat(document.getElementById("montant").value);
-		let durée = parseFloat(document.getElementById("durée").value);
-		let tauxIntérêt =
-			parseFloat(document.getElementById("taux_intérêt").value) / 100;
-		let type = document.querySelector('input[name="type"]:checked').value;
+    // Récupérer les valeurs du formulaire
+    let montant = parseFloat(document.getElementById("montant").value);
+    let durée = parseFloat(document.getElementById("durée").value);
+    let tauxIntérêt =
+      parseFloat(document.getElementById("taux_intérêt").value) / 100;
+    let type = document.querySelector('input[name="type"]:checked').value;
 
-		// Afficher les valeurs pour le débogage
-		console.log("Montant:", montant);
-		console.log("Durée:", durée);
-		console.log("Taux d'intérêt:", tauxIntérêt);
-		console.log("Type de prêt:", type);
+    // Vérifier que toutes les valeurs sont valides
+    if (isNaN(montant) || isNaN(durée) || isNaN(tauxIntérêt) || !type) {
+      alert("Veuillez remplir correctement les champs s'il vous plaît.");
+      return;
+    }
 
-		// Vérifier que toutes les valeurs sont valides
-		if (isNaN(montant) || isNaN(durée) || isNaN(tauxIntérêt) || !type) {
-			alert("Veuillez remplir correctement les champs s'il vous plaît.");
-			return;
-		}
+    let mensualités;
+    let montantTotalRembourse;
+    let interetMensuel;
 
-		// Calculer les mensualités et le montant total remboursé
-		let mensualités;
-		let montantTotalRembourse;
-		if (type === "Repayment") {
-			let nombreMensualités = durée * 12;
-			let CapitalRestantDu = montant;
-			let remboursementCapitalAnuuel = montant / durée;
-			let remboursementCapitalMensuel = montant / nombreMensualités;
-			let montantTotalInteret = 0;
-		
-		
-			while (durée > 0) {
-				montantTotalInteret += CapitalRestantDu * tauxIntérêt;
-				CapitalRestantDu -= remboursementCapitalAnuuel;
-				
-				durée--;
-			}
+    // Calcul du montant remboursé et des intérêts
+    if (type === "Repayment") {
+      let nombreMensualités = durée * 12;
+      let CapitalRestantDu = montant;
+      let remboursementCapitalAnuuel = montant / durée;
+      let remboursementCapitalMensuel = montant / nombreMensualités;
+      let montantTotalInteret = 0;
 
-			interetMensuel = montantTotalInteret / nombreMensualités;
-			mensualités = remboursementCapitalMensuel + interetMensuel;
-			montantTotalRembourse = mensualités * nombreMensualités;
+      while (durée > 0) {
+        montantTotalInteret += CapitalRestantDu * tauxIntérêt;
+        CapitalRestantDu -= remboursementCapitalAnuuel;
 
-			console.log(montantTotalRembourse);
-			console.log(mensualités);
+        durée--;
+      }
 
-		} else if (type === "Interest_only") {
-			let nombreMensualités = durée * 12;
-			let CapitalRestantDu = montant;
-			let remboursementCapitalAnuuel = montant / durée;
-			let montantTotalInteret = 0;
+      interetMensuel = montantTotalInteret / nombreMensualités;
+      mensualités = remboursementCapitalMensuel + interetMensuel;
+      montantTotalRembourse = mensualités * nombreMensualités;
 
-			while (durée > 0) {
-				montantTotalInteret += CapitalRestantDu * tauxIntérêt;
-				CapitalRestantDu -= remboursementCapitalAnuuel;
+      // Calcul du montant des intérêts payés
+    } else if (type === "Interest_only") {
+      let nombreMensualités = durée * 12;
+      let CapitalRestantDu = montant;
+      let remboursementCapitalAnuuel = montant / durée;
+      let montantTotalInteret = 0;
 
-				durée--;
-			}
+      while (durée > 0) {
+        montantTotalInteret += CapitalRestantDu * tauxIntérêt;
+        CapitalRestantDu -= remboursementCapitalAnuuel;
 
-			mensualités = montantTotalInteret / nombreMensualités;
-			montantTotalRembourse = montantTotalInteret
+        durée--;
+      }
 
-			console.log(interetMensuel);
-			console.log(montantTotalRembourse);
+      mensualités = montantTotalInteret / nombreMensualités;
+      montantTotalRembourse = montantTotalInteret;
+    }
 
-		}
+    // Vérifier que les mensualités sont définies
+    if (mensualités === undefined || isNaN(mensualités)) {
+      alert("Une erreur s'est produite lors du calcul des mensualités.");
+      return;
+    }
 
-		// Vérifier que les mensualités sont définies
-		if (mensualités === undefined || isNaN(mensualités)) {
-			alert("Une erreur s'est produite lors du calcul des mensualités.");
-			return;
-		}
+    // Afficher le résultat sans effacer le contenu existant
+    let resultatDiv = document.getElementById("resultat");
+    let resultatObtenu = document.getElementById("resultat_obtenu");
 
-		// Afficher le résultat sans effacer le contenu existant
-		let resultatDiv = document.getElementById("resultat");
-		let resultatObtenu = document.getElementById("resultat_obtenu");
+    if (type === "Repayment") {
+      resultatObtenu.innerHTML = `<p>Mensualités: ${mensualités.toFixed(
+        2
+      )} €</p>`;
+      resultatObtenu.innerHTML += `<p>Montant total remboursé: ${montantTotalRembourse.toFixed(
+        2
+      )} €</p>`;
+    } else if (type === "Interest_only") {
+      resultatObtenu.innerHTML = `<p>Intérêts mensuels: ${interetMensuel.toFixed(
+        2
+      )} €</p>`;
+      resultatObtenu.innerHTML += `<p>Intérêts totaux remboursés: ${montantTotalRembourse.toFixed(
+        2
+      )} €</p>`;
+    }
+    resultatDiv.classList.remove("hidden");
 
-		if (type === "Repayment") {
-			resultatObtenu.innerHTML = `<p>Mensualités: ${mensualités.toFixed(
-				2
-			)} €</p>`;
-			resultatObtenu.innerHTML += `<p>Montant total remboursé: ${montantTotalRembourse.toFixed(
-				2
-			)} €</p>`;
-		} else if (type === "Interest_only") {
-			resultatObtenu.innerHTML = `<p>Intérêts mensuels: ${interetMensuel.toFixed(
-				2
-			)} €</p>`;
-			resultatObtenu.innerHTML += `<p>Intérêts totaux remboursés: ${montantTotalRembourse.toFixed(
-				2
-			)} €</p>`;
-		}
-		resultatDiv.classList.remove("hidden");
+    // Rendre invisible le message vide
+    let resultatVide = document.getElementById("resultatVide");
+    resultatVide.style.display = "none";
+  });
 
-		// Rendre invisible le message vide
-		let resultatVide = document.getElementById("resultatVide");
-		resultatVide.style.display = "none";
-	});
-
-	document.getElementById('footer').innerHTML = `<a href="https://baboucdportfolio-a6fa81dec8fa.herokuapp.com/">&copy; ${new Date().getFullYear()} Babou CAMARA-DIABY. Tous droits réservés.</a>`;
-   
+document.getElementById(
+  "footer"
+).innerHTML = `<a href="https://baboucdportfolio-a6fa81dec8fa.herokuapp.com/">&copy; ${new Date().getFullYear()} Babou CAMARA-DIABY. Tous droits réservés.</a>`;

@@ -1,4 +1,3 @@
-/* Utilisation de la police Plus Jakarta Sans avec différentes valeurs de poids */
 .plus-jakarta-sans-200 {
   font-family: "Plus Jakarta Sans", sans-serif;
   font-optical-sizing: auto;
@@ -78,11 +77,11 @@ label {
 }
 
 .champs {
-  width: 100%;
+  width: calc(100% - 20px);
   padding: 0.5rem;
   border: 1px solid grey;
   border-radius: 5px;
-  margin: 10px, auto, 10px, auto;
+  margin: 10px;
 }
 
 fieldset {
@@ -99,21 +98,35 @@ legend {
 .Repayment,
 .Interest {
   display: flex;
+  align-items: center;
   border: solid 1px grey;
   border-radius: 5px;
   margin-top: 10px;
   margin-left: 10px;
+  margin-right: 10px;
+  padding: 5px;
 }
 
 .radio {
   width: 20px;
+  height: 20px;
   margin: 0px 10px;
+  padding: 0;
+}
+
+input[type="radio"] {
+  margin: 0 10px;
+  border: none;
+  width: 20px;
+  height: 20px;
 }
 
 .label_radio {
   font-size: 15px;
   font-weight: bold;
   color: black;
+  margin: 0;
+  padding: 0;
 }
 
 input {
@@ -122,11 +135,11 @@ input {
 }
 
 .autre_champs {
-  width: 80%;
+  width: calc(100% - 20px);
   padding: 0.5rem;
   border: 1px solid grey;
   border-radius: 5px;
-  margin: 10px, auto, 10px, auto;
+  margin: 10px;
 }
 
 button {
@@ -222,13 +235,16 @@ a {
   }
 
   .block-calcul {
+    width: 80%;
+    margin-left: 0;
     border-radius: 20px;
-    height: 550px;
+    height: auto;
     margin-bottom: 50px;
   }
 
   .block_resultat {
-    height: 550px;
+    width: 80%;
+    height: auto;
     margin-bottom: 50px;
     position: relative;
     top: auto;
@@ -237,32 +253,80 @@ a {
 
   body {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
   }
 }
 
 @media (max-width: 768px) {
-  .block_blanc {
-    display: none;
-  }
-
   .block-calcul {
-    border-radius: 20px;
-    height: auto;
-    width: 80%;
-    margin: 10px 0px;
+    width: 95%;
+    padding: 15px;
   }
 
   .block_resultat {
-    height: auto;
-    width: 80%;
-    margin: 10px 0px;
+    width: 95%;
+    padding: 15px;
   }
 
-  body {
-    display: flex;
+  .durée_et_intérêt {
     flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+  }
+
+  .block_duree, .block_intérêt {
+    width: 100%;
+  }
+
+  .autre_champs {
+    width: 100%;
+  }
+
+  .Repayment, .Interest {
+    margin: 10px;
+    width: calc(100% - 20px);
+  }
+
+  .image_calculatrice {
+    width: 100px;
+    margin: 50px auto 0px auto;
+  }
+
+  .titre_affichage_resultat {
+    font-size: 1.2em;
+  }
+
+  .phrase_explicative {
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) {
+  .block-calcul, .block_resultat {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .titre {
+    font-size: 1.2em;
+  }
+
+  .champs, .autre_champs {
+    width: calc(100% - 16px);
+    padding: 0.4rem;
+    margin: 8px;
+  }
+
+  button {
+    padding: 0.4rem;
+  }
+
+  .resultat {
+    padding: 15px;
+  }
+
+  .Repayment, .Interest {
+    margin: 8px;
+    width: calc(100% - 16px);
   }
 }
