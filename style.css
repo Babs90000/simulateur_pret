@@ -240,104 +240,216 @@ a {
   text-decoration: none;
 }
 
-@media (max-width: 1050px) {
+/* Media queries pour différents formats d'écran */
+
+/* Tablettes en mode paysage et écrans moyens */
+@media (max-width: 1200px) and (min-width: 1051px) {
+  .container {
+    max-width: 1000px;
+  }
+  
+  .block-calcul {
+    width: 35%;
+  }
+  
+  .block_resultat {
+    width: 35%;
+  }
+  
+  .block_blanc {
+    width: 120px;
+  }
+}
+
+/* Tablettes et petits ordinateurs portables */
+@media (max-width: 1050px) and (min-width: 769px) {
+  body {
+    padding: 10px;
+    min-height: 100vh;
+    justify-content: flex-start;
+  }
+
+  .container {
+    flex-direction: column;
+    width: 100%;
+    max-width: 700px;
+    gap: 2px; /* Réduire de 5px à 2px */
+  }
+
   .block_blanc {
     display: none;
   }
 
   .block-calcul {
-    width: 80%;
+    width: 95%;
     margin-left: 0;
-    border-radius: 20px;
+    border-radius: 20px 20px 0px 0px;
     height: auto;
-    margin-bottom: 50px;
+    min-height: 250px; /* Réduire de 320px à 250px */
+    margin-bottom: 0;
+    order: 1;
+    padding: 10px; /* Réduire de 15px à 10px */
   }
 
   .block_resultat {
-    width: 80%;
+    width: 95%;
+    border-radius: 0px 0px 20px 20px;
     height: auto;
-    margin-bottom: 50px;
+    min-height: 200px; /* Réduire de 280px à 200px */
+    margin-left: 0;
+    margin-top: 0;
     position: relative;
-    top: auto;
-    left: auto;
+    order: 2;
+    padding: 10px; /* Réduire de 15px à 10px */
   }
 
-  body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-  }
-}
-
-@media (max-width: 768px) {
-  .block-calcul {
-    width: 95%;
-    padding: 15px;
-  }
-
-  .block_resultat {
-    width: 95%;
-    padding: 15px;
+  /* Réduire encore plus les espaces */
+  .block_superieur {
+    margin-bottom: 8px; /* Réduire de 15px à 8px */
   }
 
   .durée_et_intérêt {
-    flex-direction: column;
+    flex-direction: row;
+    gap: 8px; /* Réduire de 10px à 8px */
+    margin-bottom: 5px; /* Réduire de 10px à 5px */
+  }
+  
+  .block_duree,
+  .block_intérêt {
+    flex: 1;
   }
 
-  .block_duree, .block_intérêt {
-    width: 100%;
-  }
-
+  .champs,
   .autre_champs {
-    width: 100%;
+    margin: 3px; /* Réduire de 5px à 3px */
+    padding: 0.3rem; /* Réduire de 0.4rem à 0.3rem */
   }
 
-  .Repayment, .Interest {
-    margin: 10px;
-    width: calc(100% - 20px);
-  }
-
-  .image_calculatrice {
-    width: 100px;
-    margin: 50px auto 0px auto;
-  }
-
-  .titre_affichage_resultat {
-    font-size: 1.2em;
-  }
-
-  .phrase_explicative {
-    font-size: 0.9em;
-  }
-}
-
-@media (max-width: 480px) {
-  .block-calcul, .block_resultat {
-    width: 100%;
-    padding: 10px;
-  }
-
-  .titre {
-    font-size: 1.2em;
-  }
-
-  .champs, .autre_champs {
-    width: calc(100% - 16px);
-    padding: 0.4rem;
-    margin: 8px;
+  .Repayment,
+  .Interest {
+    margin: 5px 3px 0px 3px; /* Supprimer complètement l'espace en bas (0px au lieu de 2px) */
+    padding: 6px; /* Réduire encore le padding de 8px à 6px */
   }
 
   button {
-    padding: 0.4rem;
+    margin: -2px 3px 2px 3px; /* Utiliser une marge négative pour rapprocher encore plus */
+    padding: 0.5rem;
+  }
+
+  fieldset {
+    margin: 3px 0 -2px 0; /* Utiliser une marge négative en bas */
+  }
+
+  /* Optimiser la zone de résultats */
+  .image_calculatrice {
+    width: 80px; /* Réduire de 100px à 80px */
+    margin: 10px auto; /* Réduire de 20px à 10px */
+  }
+
+  .phrase_explicative {
+    font-size: 12px; /* Réduire de 13px à 12px */
+    margin: 5px 0; /* Réduire de 10px à 5px */
   }
 
   .resultat {
-    padding: 15px;
+    padding: 10px; /* Réduire de 15px à 10px */
+    margin-top: 15px;
+    font-size: 14px;
   }
 
-  .Repayment, .Interest {
-    margin: 8px;
-    width: calc(100% - 16px);
+  #footer {
+    margin-top: 10px;
+    font-size: 11px;
+  }
+
+  /* Réduire les marges générales */
+  label {
+    margin: 5px 0 5px 5px;
+  }
+
+  h3 {
+    margin-top: 5px;
+    font-size: 18px;
+  }
+
+  .titre_affichage_resultat {
+    margin-bottom: 5px;
+    font-size: 16px;
+  }
+}
+
+/* Smartphones */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+  
+  .container {
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .block-calcul {
+    width: 100%;
+    border-radius: 20px 20px 0px 0px;
+    margin-bottom: 0;
+    order: 1;
+  }
+  
+  .block_blanc {
+    display: none;
+  }
+  
+  .block_resultat {
+    width: 100%;
+    border-radius: 0px 0px 20px 20px;
+    margin-left: 0;
+    margin-top: 0;
+    order: 2;
+  }
+  
+  .durée_et_intérêt {
+    flex-direction: column;
+  }
+  
+  .block_duree,
+  .block_intérêt {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .autre_champs {
+    width: calc(100% - 20px);
+    margin: 10px;
+  }
+  
+  #footer {
+    margin-top: 10px;
+    font-size: 10px;
+  }
+}
+
+/* Très petits smartphones */
+@media (max-width: 480px) {
+  .container {
+    max-width: 350px;
+  }
+  
+  .block-calcul,
+  .block_resultat {
+    padding: 15px;
+    height: auto;
+    min-height: 300px;
+  }
+  
+  .champs,
+  .autre_champs {
+    width: calc(100% - 10px);
+    margin: 5px;
+  }
+  
+  button {
+    margin: 5px 0;
   }
 }
