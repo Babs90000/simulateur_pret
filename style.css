@@ -35,6 +35,18 @@
 
 body {
   background-color: aquamarine;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .block_superieur {
@@ -63,12 +75,12 @@ label {
 }
 .block-calcul {
   width: 30%;
-  margin-left: 270px;
+  margin-left: 0; /* Supprimer complètement le margin-left */
   background-color: white;
   border-radius: 20px 0px 0px 20px;
   height: 500px;
   padding: 20px;
-  margin-top: 50px;
+  margin-top: 0; /* Supprimer le margin-top aussi */
 }
 
 .durée_et_intérêt {
@@ -153,26 +165,22 @@ button {
 
 .block_resultat {
   width: 30%;
-  margin: 0 auto;
   background-color: rgb(36, 30, 94);
   border-radius: 30px;
   height: 500px;
   padding: 20px;
-  margin-top: 50px;
-  position: absolute;
-  top: 0px;
-  left: 595px;
+  margin-top: 0; /* Supprimer le margin-top */
+  position: relative; /* Changer de absolute à relative */
   display: flex;
   flex-direction: column;
+  margin-left: -150px; /* Garder seulement le chevauchement */
 }
 
 .block_blanc {
   background-color: white;
   height: 500px;
   width: 150px;
-  position: absolute;
-  top: 50px;
-  left: 585px;
+  position: relative; /* Changer de absolute à relative */
 }
 
 .hidden {
@@ -222,6 +230,9 @@ button {
 #footer {
   font-size: 12px;
   text-align: center;
+  color: #333;
+  margin-top: 20px;
+  width: 100%;
 }
 
 a {
