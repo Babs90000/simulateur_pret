@@ -159,7 +159,7 @@ button {
   padding: 0.5rem;
   border: 1px solid grey;
   border-radius: 20px;
-  margin: 10px, auto, 10px, auto;
+  margin: 10px auto; /* Corriger la syntaxe (enlever les virgules) */
   background-color: greenyellow;
 }
 
@@ -407,26 +407,122 @@ a {
     margin-left: 0;
     margin-top: 0;
     order: 2;
+    padding: 12px;
+    height: auto;
+    min-height: 150px; /* Réduire de 200px à 150px */
   }
-  
-  .durée_et_intérêt {
+
+  /* Optimiser la zone de résultats */
+  .image_calculatrice {
+    width: 60px;
+    margin: 5px auto; /* Réduire de 8px à 5px */
+  }
+
+  .titre_affichage_resultat {
+    font-size: 14px;
+    margin-bottom: 2px; /* Réduire de 3px à 2px */
+  }
+
+  .phrase_explicative {
+    font-size: 11px;
+    margin: 2px 0 5px 0; /* Réduire la marge du haut et ajouter marge du bas pour compenser */
+    padding-bottom: 0; /* Supprimer tout padding en bas */
+  }
+
+  .resultatVide {
+    display: flex;
     flex-direction: column;
+    height: auto; /* Permettre à la hauteur de s'adapter */
+    justify-content: flex-start; /* Aligner vers le haut */
+  }
+
+  .Repayment,
+  .Interest {
+    margin: 6px 3px 0px 3px;
+    padding: 6px;
+  }
+
+  button {
+    margin: -16px 3px 1px 3px; /* Réduire de moitié l'espace au-dessus (de -8px à -16px) et en dessous (de 2px à 1px) */
+    padding: 0.5rem;
+  }
+
+  fieldset {
+    margin: 3px 0 -16px 0; /* Réduire de moitié l'espace en bas (de -8px à -16px) */
+  }
+
+  /* Réduire encore plus les espaces */
+  .block_superieur {
+    margin-bottom: 8px; /* Réduire de 15px à 8px */
+  }
+
+  .durée_et_intérêt {
+    flex-direction: row;
+    gap: 8px; /* Réduire de 10px à 8px */
+    margin-bottom: 5px; /* Réduire de 10px à 5px */
   }
   
   .block_duree,
   .block_intérêt {
-    width: 100%;
-    margin-bottom: 10px;
+    flex: 1;
   }
-  
+
+  .champs,
   .autre_champs {
-    width: calc(100% - 20px);
-    margin: 10px;
+    margin: 3px; /* Réduire de 5px à 3px */
+    padding: 0.3rem; /* Réduire de 0.4rem à 0.3rem */
   }
-  
+
+  .Repayment,
+  .Interest {
+    margin: 6px 3px 0px 3px;
+    padding: 6px;
+  }
+
+  button {
+    margin: -16px 3px 1px 3px; /* Réduire de moitié l'espace au-dessus (de -8px à -16px) et en dessous (de 2px à 1px) */
+    padding: 0.5rem;
+  }
+
+  fieldset {
+    margin: 3px 0 -16px 0; /* Réduire de moitié l'espace en bas (de -8px à -16px) */
+  }
+
+  /* Optimiser la zone de résultats */
+  .image_calculatrice {
+    width: 80px; /* Réduire de 100px à 80px */
+    margin: 10px auto; /* Réduire de 20px à 10px */
+  }
+
+  .phrase_explicative {
+    font-size: 12px; /* Réduire de 13px à 12px */
+    margin: 5px 0; /* Réduire de 10px à 5px */
+  }
+
+  .resultat {
+    padding: 10px; /* Réduire de 15px à 10px */
+    margin-top: 15px;
+    font-size: 14px;
+  }
+
   #footer {
     margin-top: 10px;
-    font-size: 10px;
+    font-size: 11px;
+  }
+
+  /* Réduire les marges générales */
+  label {
+    margin: 5px 0 5px 5px;
+  }
+
+  h3 {
+    margin-top: 5px;
+    font-size: 18px;
+  }
+
+  .titre_affichage_resultat {
+    margin-bottom: 5px;
+    font-size: 16px;
   }
 }
 
@@ -451,5 +547,40 @@ a {
   
   button {
     margin: 5px 0;
+  }
+
+  .block_resultat {
+    padding: 10px;
+    min-height: 130px; /* Réduire encore plus */
+  }
+
+  .image_calculatrice {
+    width: 50px;
+    margin: 3px auto; /* Réduire encore plus */
+  }
+
+  .titre_affichage_resultat {
+    font-size: 12px;
+    margin-bottom: 1px; /* Réduire à 1px */
+  }
+
+  .phrase_explicative {
+    font-size: 10px;
+    margin: 1px 0 3px 0; /* Réduire toutes les marges */
+  }
+
+  .Repayment,
+  .Interest {
+    margin: 5px 3px 0px 3px;
+    padding: 5px;
+  }
+
+  button {
+    margin: -20px 5px 1px 5px; /* Réduire de moitié l'espace au-dessus (de -10px à -20px) et en dessous (de 2px à 1px) */
+    padding: 0.5rem;
+  }
+
+  fieldset {
+    margin: 2px 0 -20px 0; /* Réduire de moitié l'espace en bas (de -10px à -20px) */
   }
 }
