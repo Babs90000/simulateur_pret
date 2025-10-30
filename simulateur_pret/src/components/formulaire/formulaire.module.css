@@ -1,0 +1,100 @@
+.formulaire {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  text-align: left;
+}
+
+.montant {
+  margin-bottom: 1.5rem;
+}
+
+.montant label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #34495e;
+}
+
+.champs {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #bdc3c7;
+  border-radius: 5px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.champs:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+.durée_et_intérêt {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.block_duree,
+.block_intérêt {
+  flex: 1;
+}
+
+.block_duree label,
+.block_intérêt label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #34495e;
+}
+
+.autre_champs {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #bdc3c7;
+  border-radius: 5px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.autre_champs:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+fieldset {
+  border: 1px solid #bdc3c7;
+  border-radius: 5px;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+fieldset legend {
+  font-weight: bold;
+  color: #34495e;
+  padding: 0 0.5rem;
+}
+
+.Repayment,
+.Interest {
+  margin-bottom: 0.5rem;
+}
+
+.radio {
+  margin-right: 0.5rem;
+}
+
+.label_radio {
+  font-weight: normal;
+}
+
+.icon {
+  margin-right: 0.5rem;
+  color: #3498db;
+  font-size: 1.2rem;
+}

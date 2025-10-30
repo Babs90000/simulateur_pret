@@ -1,0 +1,43 @@
+.resultat {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  text-align: center;
+}
+
+.resultat h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.resultat p {
+  color: #7f8c8d;
+  line-height: 1.6;
+}
+
+.resultatVide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image_calculatrice {
+  width: 150px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.titre_affichage_resultat {
+  color: #34495e;
+  margin-bottom: 0.5rem;
+}
+
+.phrase_explicative {
+  color: #95a5a6;
+}
+
+.hidden {
+  display: none;
+}
