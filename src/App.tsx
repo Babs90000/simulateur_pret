@@ -61,22 +61,24 @@ export default function App() {
   return (
     <div className="App">
       <Header />
-      <Formulaire
-        capital={capital}
-        Duree={duree}
-        Taux={taux}
-        setCapital={setCapital}
-        setDuree={setDuree}
-        setTaux={setTaux}
-        onCalculer={calculer}
-      />
-      <Resultat
-        montantTotal={montantTotal}
-        mensualites={mensualites}
-        interetMensuel={interetMensuel}
-        resultatVisible={resultatVisible}
-        interetTotal={interetTotal} // Maintenant correct
-      />
+      <div className="container">
+        <Formulaire
+          capital={capital}
+          Duree={duree}
+          Taux={taux}
+          setCapital={setCapital}
+          setDuree={setDuree}
+          setTaux={setTaux}
+          onCalculer={calculer}
+        />
+        <Resultat
+          montantTotal={montantTotal}
+          mensualites={mensualites}
+          interetMensuel={interetMensuel}
+          resultatVisible={resultatVisible}
+          interetTotal={interetTotal}
+        />
+      </div>
       <Footer />
     </div>
   );

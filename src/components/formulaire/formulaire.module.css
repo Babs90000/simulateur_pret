@@ -1,0 +1,169 @@
+.formulaire {
+  background: white;
+  padding: 1rem;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 450px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.formulaire:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+}
+
+.montant {
+  margin-bottom: 1rem;
+}
+
+.montant label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+  color: #374151;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.champs {
+  width: 100%;
+  padding: 0.5rem;
+  border: none;
+  border-bottom: 2px solid #e5e7eb;
+  font-size: 0.9rem;
+  transition: border-color 0.3s ease;
+  background: transparent;
+}
+
+.champs:focus {
+  outline: none;
+  border-bottom-color: #667eea;
+}
+
+.durée_et_intérêt {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.block_duree,
+.block_intérêt {
+  flex: 1;
+}
+
+.block_duree label,
+.block_intérêt label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+  color: #374151;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.autre_champs {
+  width: 100%;
+  padding: 0.5rem;
+  border: none;
+  border-bottom: 2px solid #e5e7eb;
+  font-size: 0.9rem;
+  transition: border-color 0.3s ease;
+  background: transparent;
+}
+
+.autre_champs:focus {
+  outline: none;
+  border-bottom-color: #667eea;
+}
+
+fieldset {
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 0.75rem;
+  margin-top: 0.5rem;
+  background: #f9fafb;
+  flex-shrink: 0;
+}
+
+fieldset legend {
+  font-weight: 600;
+  color: #374151;
+  padding: 0 0.5rem;
+  font-size: 0.9rem;
+}
+
+.Repayment,
+.Interest {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  padding: 0.375rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.Repayment:hover,
+.Interest:hover {
+  background-color: #f3f4f6;
+}
+
+.radio {
+  width: 16px;
+  height: 16px;
+  margin-right: 0.5rem;
+  accent-color: #667eea;
+}
+
+.label_radio {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.button {
+  width: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-top: auto;
+  flex-shrink: 0;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(102, 126, 234, 0.3);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+.buttonIcon {
+  margin-right: 0.5rem;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .durée_et_intérêt {
+    flex-direction: column;
+  }
+
+  .formulaire {
+    padding: 1.25rem;
+    max-width: 100%;
+  }
+}
