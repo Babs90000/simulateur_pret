@@ -16,13 +16,8 @@ COPY . .
 RUN npm run build
 
 # ── Étape 2 : Image de production ────────────────────────────────
-FROM cgr.dev/chainguard/nginx:latest
+FROM nginx:alpine
 
-# On copie les fichiers buildés depuis l'étape précédente
 COPY --from=build /app/dist /usr/share/nginx/html
 
-# Copie explicite de l'index (évite les erreurs de permission)
-COPY --from=build /app/dist/index.html /usr/share/nginx/html/index.html
-
-# Port non-root requis par Chainguard
-EXPOSE 8080
+EXPOSE 80
