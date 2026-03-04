@@ -1,19 +1,28 @@
+# ── Étape 1 : Build ──────────────────────────────────────────────
 FROM cgr.dev/chainguard/node:latest AS build
 
 WORKDIR /app
 
-COPY --chown=node:node package*.json ./
+# On copie les dépendances en premier (optimise le cache Docker)
+COPY package*.json ./
 
+# Installation propre
 RUN npm ci
 
-COPY --chown=node:node . .
+# On copie le reste du code source
+COPY . .
 
+# On génère le dossier dist
 RUN npm run build
 
+# ── Étape 2 : Image de production ────────────────────────────────
 FROM cgr.dev/chainguard/nginx:latest
 
+# On copie les fichiers buildés depuis l'étape précédente
 COPY --from=build /app/dist /usr/share/nginx/html
 
-RUN printf "server { listen 8080; location / { root /usr/share/nginx/html; index index.html; try_files $uri $uri/ /index.html; } server_tokens off; add_header X-Frame-Options SAMEORIGIN; add_header X-Content-Type-Options nosniff; }" > /etc/nginx/conf.d/default.conf
+# Copie explicite de l'index (évite les erreurs de permission)
+COPY --from=build /app/dist/index.html /usr/share/nginx/html/index.html
 
+# Port non-root requis par Chainguard
 EXPOSE 8080
