@@ -1,10 +1,15 @@
 import styles from "./formulaire.module.css";
-import {
-  FaEuroSign,
-  FaClock,
-  FaPercent,
-  FaCalculator,
-} from "react-icons/fa";
+import { FaEuroSign, FaClock, FaPercent, FaCalculator } from "react-icons/fa";
+
+interface FormulaireProps {
+  capital: number;
+  Duree: number;
+  Taux: number;
+  setCapital: (val: number) => void;
+  setDuree: (val: number) => void;
+  setTaux: (val: number) => void;
+  onCalculer: () => void;
+}
 
 export default function Formulaire({
   capital,
@@ -14,7 +19,7 @@ export default function Formulaire({
   setDuree,
   setTaux,
   onCalculer,
-}) {
+}: FormulaireProps) {
   return (
     <form className={styles.formulaire} onSubmit={(e) => e.preventDefault()}>
       <div className={styles.montant}>
@@ -26,7 +31,7 @@ export default function Formulaire({
           name="capital"
           id="capital"
           className={styles.champs}
-          value={capital || ''}
+          value={capital || ""}
           onChange={(e) => setCapital(Number(e.target.value))}
           placeholder="Ex: 200000"
           required
@@ -42,7 +47,7 @@ export default function Formulaire({
             name="durée"
             id="durée"
             className={styles.autre_champs}
-            value={Duree || ''}
+            value={Duree || ""}
             onChange={(e) => setDuree(Number(e.target.value))}
             placeholder="Ex: 20"
             required
@@ -57,7 +62,7 @@ export default function Formulaire({
             name="taux_intérêt"
             id="taux_intérêt"
             className={styles.autre_champs}
-            value={Taux || ''}
+            value={Taux || ""}
             onChange={(e) => setTaux(Number(e.target.value))}
             step="0.01"
             placeholder="Ex: 2.5"
@@ -65,7 +70,6 @@ export default function Formulaire({
           />
         </div>
       </div>
-
       <button
         type="submit"
         onClick={(e) => {

@@ -1,13 +1,21 @@
 import styles from "./resultat.module.css";
 import { FaChartLine, FaEuroSign, FaCalendarAlt, FaPiggyBank } from "react-icons/fa";
 
+interface ResultatProps {
+  montantTotal: number;
+  mensualites: number;
+  interetMensuel: number;
+  resultatVisible: boolean;
+  interetTotal: number;
+}
+
 export default function Resultat({
   montantTotal,
   mensualites,
   interetMensuel,
   resultatVisible,
   interetTotal,
-}) {
+}: ResultatProps) {
   if (resultatVisible) {
     return (
       <div className={styles.resultat}>
